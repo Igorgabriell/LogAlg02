@@ -11,21 +11,98 @@
 
     <script>
 
-       var nome = prompt("Qual o nome do funcionario?");
-        var tempo = Number(prompt("Quanto tempo de serviço?"));
-        var salario = parseFloat(prompt("Qual sarario medio?"));
-        var idade = Number(prompt("Qual a idade do funcionario?"));
+       var nome = prompt("Digite o nome do funcionario?");
+        var tempoServico = parseFloat(prompt("Quanto tempo de serviço?"));
+        var salarioMedio = parseFloat(prompt("Qual salario medio?"));
+        var idade = parseInt(prompt("Qual a idade do funcionario?"));
+        // parseInt ( inteiro )
         
-      output.innerHTML=`nome:${nome} <br> tempo:${tempo} <br> salario:${salario} <br> idade:${idade}`
+//*
+// Formatar uma variavel que exibirá os dados do funcionario
 
-
-
-
-
-    </script>
-
-
-
-
-</body>
-</html>
+var dados = `
+        
+        Nome: ${nome}<br>
+        Tempo de serviço: ${tempoServico}<br>
+        Salário médio: ${salarioMedio}<br>
+        Idade: ${idade}
+                
+                `;
+        
+                /**
+                 * Atividade 7:
+                 * Abono salarial.
+                 */
+                var abono = 0;
+        
+                /**
+                 * Atividade 7 (cont.):
+                 * Testa o tempo de serviço.
+                 */
+                if (tempoServico > 12) {
+        
+                    // Calcula 10% do salário médio como abono.
+                    abono = salarioMedio * 10 / 100;
+                }
+        
+                /**
+                 * Atividade 7 (cont.):
+                 * Adiciona abono por idade
+                 */
+                abono = abono + idade;
+        
+                /**
+                 * Atividade 8:
+                 * Variável com prórixmos salários.
+                 * Salário médio + abono.
+                 */
+                var proximoSalario = salarioMedio + abono;
+        
+                dados += `
+                
+        <hr>
+        Abono salarial: ${abono}<br>
+        Próximos salários: ${proximoSalario}<br>
+        
+                `;
+        
+                /**
+                 * Atividade 9:
+                 * Variável para armazenar o INSS.
+                 */
+                var inss = 0;
+        
+                // Até 1500, 5%
+                if (proximoSalario <= 1500) {
+                    inss = proximoSalario * 5 / 100;
+        
+                    // de R$ 1.500,01 até R$ 2.500,00, 10%
+                } else if (proximoSalario <= 2500) {
+                    inss = proximoSalario * 10 / 100;
+        
+                    // de R$ 2.500,01 até R$ 3.500,00, 13%
+                } else if (proximoSalario <= 3500) {
+                    inss = proximoSalario * 13 / 100;
+        
+                    // acima de 3.500,00, 15%
+                } else {
+                    inss = proximoSalario * 15 / 100;
+                }
+        
+                /**
+                 * Atividade 10:
+                 * Acrescenta o INSS.
+                 */
+                dados += `Contribuição para o INSS: ${inss}`;
+        
+                /**
+                 * Atividades 6 (continuação), 8 e 10:
+                 * Exibe os dados na div.
+                 */
+                output.innerHTML = dados;
+        
+            </script>
+        
+        </body>
+        
+        </html>

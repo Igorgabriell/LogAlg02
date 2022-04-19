@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+// parseFlot ou number
+// ParseFloat é para converter String ( texto) para numero fracionado
+// number é para converter String ( texto) para numero inteiro
+
+  var number1 = parseFloat(prompt(' digite um número:'));
+  var number2 = parseFloat(prompt('digite outro número:'));
+  
+  // console.log é para exibir no console do navegador
+
+  console.log(number1, number2);
+
+  console.log(number1 + number2);
+  console.log(number1 - number2);
+
+ // Document.write é para puxar o documeto desejado e se escreve da seguinte forma document.write (`texto ${variavel} e ${variavel} ${ variavel  + ou - ou * ou /  variavel } <br> .`)
+ // intercolação em javascript é ${aqui entra a variavel} 
+ // O <br> está depreciado por isso evitamos de ultilizar, mas serve para pular linha
+ 
+ document.write(` O resultado da soma entre ${number1} e ${number2} é ${number1+number2}. <br> `);
+
+ document.write(` O resultado da soma entre ${number1} e ${number2} é ${number1-number2}.`);
+
+
+
+</script>
+
+
+
+</body>
+</html>
